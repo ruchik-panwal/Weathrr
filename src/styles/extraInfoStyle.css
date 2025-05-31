@@ -1,0 +1,25 @@
+.extraInfoWrap {
+display: grid;
+gap: 20px;
+align-items: center;
+justify-items: center;
+  grid-template-columns: repeat(auto-fit ,minmax(150px, 1fr));
+  grid-template-rows: repeat(auto-fit, 150px);
+}
+
+.extraInfoWrap div {
+  background-color: black;
+  height: 150px;
+  width: 150px;
+  color: whitesmoke;
+  border-radius: 30px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.material-icons {
+  font-size: 3rem;
+}
