@@ -1,4 +1,6 @@
+import extraInfoList from "./extraInfoList";
 import "/src/styles/display.css";
+import "/src/styles/extraInfoStyle.css";
 
 const body = document.querySelector("body");
 
@@ -59,4 +61,39 @@ function mainDisplayDom() {
   body.appendChild(mainDisplay);
 }
 
-export default mainDisplayDom;
+function extraInfoDom() {
+  // creating main wrapper for all the extra Infos
+  const extraInfoWrap = document.createElement("div");
+  extraInfoWrap.className = "extraInfoWrap";
+
+  // Making the elements for extea info div
+  extraInfoList().forEach(element => {
+    // The Wrapper for Individual InfoElements
+    const infoDiv = document.createElement("div");
+    infoDiv.className = "info" + element.iconName;
+
+    // Adding Icon
+    const infoIcon = document.createElement("span");
+    infoIcon.className = "material-icons";
+    infoIcon.textContent = element.iconName;
+    infoDiv.appendChild(infoIcon);
+    
+    // Ading Dom For the Value
+    const infoValue = document.createElement("p");
+    infoValue.className = "infoValue";
+    infoValue.textContent = "34 mph"; //Temporary Value
+    infoDiv.appendChild(infoValue);
+    
+    // Adding title
+    const infoTitle = document.createElement("p");
+    infoTitle.className = "infoTitle";
+    infoTitle.textContent = element.title;
+    infoDiv.appendChild(infoTitle);
+
+    extraInfoWrap.appendChild(infoDiv);
+  });
+
+  body.appendChild(extraInfoWrap);
+}
+
+export { mainDisplayDom, extraInfoDom };
