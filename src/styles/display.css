@@ -1,0 +1,66 @@
+h1,
+p {
+  color: whitesmoke;
+  margin: 0;
+}
+
+.mainDisplay {
+  height: 600px;
+  width: 500px;
+  border-radius: 30px;
+  overflow: hidden;
+  background: #000;
+  display: flex;
+  flex-direction: column;
+}
+
+.imgBtnWrap{
+  height: 40%;
+
+  position: relative;
+  display: inline-block;
+}
+
+.displayImg {
+  object-fit: cover;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.resetBtn {
+  background: black;
+  color: whitesmoke;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  padding: 8px 12px;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+.displayInfoWrap {
+  height: 60%;
+  width: 100%;
+
+  box-sizing: border-box;
+  padding: 20px 30px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+.currentTemp {
+  font-size: 5rem;
+}
+.currentDes {
+  font-size: 1.6rem;
+}
+.description {
+  margin-top: 10px;
+}
+.disLocation {
+  margin-top: auto;
+  align-self: center;
+}
