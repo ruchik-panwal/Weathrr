@@ -4,9 +4,30 @@ import "/src/styles/extraInfoStyle.css";
 import "/src/styles/dailyForecast.css";
 
 const body = document.querySelector("body");
+
+function header() {
+  const head = document.createElement("div");
+  head.className = "header";
+  body.appendChild(head);
+
+  const searchForm = document.createElement("form");
+  searchForm.className = "searchForm";
+  head.appendChild(searchForm);
+
+  const searchbar = document.createElement("input");
+  searchbar.className = "searchbar";
+  searchbar.placeholder = "Search your place";
+  searchForm.appendChild(searchbar);
+
+  const searchBtn = document.createElement("button");
+  searchBtn.className = "searchBtn";
+  searchBtn.classList.add("material-icons")
+  searchBtn.textContent = "search";
+  searchForm.appendChild(searchBtn);
+}
+
 const mainContent = document.createElement("div");
 mainContent.className = "mainContent";
-body.appendChild(mainContent);
 
 function mainDisplayDom() {
   // The Main Display which contains the most relevant Info
@@ -117,21 +138,21 @@ function futureForecastDom() {
     dayForecastText.className = "dayForecastText";
     dayForecast.appendChild(dayForecastText);
 
-    const arr = ["forecastDate", "forecastHigh", "forecastLow", "forecastDes"]; 
-    arr.forEach(
-      (forecast) => {
-        const element = document.createElement("p");
-        element.className = forecast;
-        element.id = "x" + (i+1) + (arr.indexOf(forecast)+1);
-        element.textContent = forecast;
-        dayForecastText.appendChild(element);
-      }
-    );
+    const arr = ["forecastDate", "forecastHigh", "forecastLow", "forecastDes"];
+    arr.forEach((forecast) => {
+      const element = document.createElement("p");
+      element.className = forecast;
+      element.id = "x" + (i + 1) + (arr.indexOf(forecast) + 1);
+      element.textContent = forecast;
+      dayForecastText.appendChild(element);
+    });
 
     // Temporary data
     forecastWrap.appendChild(dayForecast);
   }
   mainContent.appendChild(forecastWrap);
+
+  body.appendChild(mainContent);
 }
 
-export { mainDisplayDom, extraInfoDom, futureForecastDom };
+export { mainDisplayDom, extraInfoDom, futureForecastDom, header };
