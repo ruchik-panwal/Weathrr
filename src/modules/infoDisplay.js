@@ -1,17 +1,17 @@
 import weatherApi from "./apiCaller";
 import { divList } from "./extraInfoList";
+import { getPlace, getUnit, getKey, getUrl } from "./extraInfoList";
 
-// Temporary API Stuff
-const API_KEY = "EXCNRQ7ZZ6XGB5KGN7HGNHGWT";
-const VC_URL =
-  "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
-const place = "juinagar";
-const unit = "uk";
 
 const list = divList();
 
 export default async function infoDisplay() {
-  const infoObj = await weatherApi(VC_URL, API_KEY, place, unit);
+  const place = getPlace();
+  const unit = getUnit();
+  const API_KEY = getKey();
+  const url = getUrl();
+
+  const infoObj = await weatherApi(url, API_KEY, place, unit);
 
   list.forEach((obj) => {
     for (const key in infoObj) {
