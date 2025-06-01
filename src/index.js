@@ -1,6 +1,11 @@
 import weatherApi from "./modules/apiCaller";
-import mainDisplayDom from "./modules/domCreaator";
+import {
+  mainDisplayDom,
+  extraInfoDom,
+  futureForecastDom,
+} from "./modules/domCreator";
 
+import "/src/styles/fontsColors.css";
 import "/src/styles/main.css";
 
 // Temporary API Stuff
@@ -12,3 +17,5 @@ const unit = "uk";
 
 weatherApi(VC_URL, API_KEY, place, unit);
 mainDisplayDom();
+extraInfoDom();
+futureForecastDom();
