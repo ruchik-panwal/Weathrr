@@ -16,8 +16,8 @@ let infoList = [
     title: "Chance of Rain"
   },
   {
-    iconName: "masks",
-    title: "Air Quality"
+    iconName: "flare",
+    title: "Solar Radiation"
   },
   {
     iconName: "lens_blur",
