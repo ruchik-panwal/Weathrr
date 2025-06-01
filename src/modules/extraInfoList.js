@@ -41,7 +41,7 @@ let data = [
   { name: "windspeed", parentobj: "currentConditions", unit: "mph" },
   { name: "precipprob", parentobj: "currentConditions", unit: "%" },
   { name: "solarradiation", parentobj: "currentConditions", unit: "W/m²" },
-  { name: "dew", parentobj: "currentConditions", unit: "°C" }
+  { name: "dew", parentobj: "currentConditions", unit: "°C" },
 ];
 
 export function extraInfoList() {
@@ -50,4 +50,32 @@ export function extraInfoList() {
 
 export function divList() {
   return data;
+}
+
+let unit = "uk";
+
+export function getUnit() {
+  return unit;
+}
+
+export function setUnit(u) {
+  unit = u;
+}
+
+let place = "mumbai";
+
+export function getPlace(){
+  return place;
+}
+
+export function setPlace(p){
+  place = p;
+}
+
+export function getKey(){
+  return "EXCNRQ7ZZ6XGB5KGN7HGNHGWT";
+}
+
+export function getUrl(){
+  return "https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/";
 }
