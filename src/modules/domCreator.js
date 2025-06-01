@@ -2,6 +2,7 @@ import { extraInfoList } from "./extraInfoList";
 import "/src/styles/display.css";
 import "/src/styles/extraInfoStyle.css";
 import "/src/styles/dailyForecast.css";
+import "/src/styles/header.css";
 
 const body = document.querySelector("body");
 
@@ -27,7 +28,7 @@ function header() {
 
   const toggleUnit = document.createElement("button");
   toggleUnit.className = "toggleUnit";
-  toggleUnit.textContent = "toggleBtn";
+  toggleUnit.textContent = "toggleUnit";
   head.appendChild(toggleUnit);
 }
 
