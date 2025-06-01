@@ -24,6 +24,11 @@ function header() {
   searchBtn.classList.add("material-icons")
   searchBtn.textContent = "search";
   searchForm.appendChild(searchBtn);
+
+  const toggleUnit = document.createElement("button");
+  toggleUnit.className = "toggleUnit";
+  toggleUnit.textContent = "toggleBtn";
+  head.appendChild(toggleUnit);
 }
 
 const mainContent = document.createElement("div");
