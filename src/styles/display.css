@@ -1,24 +1,33 @@
-h1,
-p {
-  color: whitesmoke;
-  margin: 0;
-}
-
 .mainDisplay {
   height: 600px;
-  width: 500px;
+  width: 400px;
   border-radius: 30px;
   overflow: hidden;
-  background: #000;
+  background: #14171a;
   display: flex;
   flex-direction: column;
+  font-size: 16px;
 }
 
-.imgBtnWrap{
-  height: 40%;
+.currentTemp {
+  font-size: 4rem;
+}
+.currentDes {
+  font-size: 1.5rem;
+}
+.description {
+  margin-top: 10px;
+  opacity: 0.8;
+  font-size: 1rem;
+}
+.disLocation {
+  margin-top: auto;
+  align-self: center;
+}
 
+.imgBtnWrap {
+  height: 40%;
   position: relative;
-  display: inline-block;
 }
 
 .displayImg {
@@ -29,15 +38,22 @@ p {
 }
 
 .resetBtn {
-  background: black;
+  background: #14171a;
   color: whitesmoke;
   position: absolute;
+  height: 40px;
+  width: 40px;
   top: 20px;
   right: 20px;
   padding: 8px 12px;
   border: none;
   border-radius: 50px;
   cursor: pointer;
+  font-size: 1.5rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .displayInfoWrap {
@@ -51,16 +67,22 @@ p {
   flex-direction: column;
 }
 
-.currentTemp {
-  font-size: 5rem;
-}
-.currentDes {
-  font-size: 1.6rem;
-}
-.description {
-  margin-top: 10px;
-}
-.disLocation {
-  margin-top: auto;
-  align-self: center;
+@media (min-width: 768px) {
+  .mainDisplay {
+    height: 600px;
+    width: 400px;
+    justify-self: end;
+    font-size: 16px;
+  }
+
+  .currentTemp {
+    font-size: 5rem;
+  }
+  .currentDes {
+    font-size: 1.5rem;
+  }
+  .description {
+    margin-top: 10px;
+    font-size: 1rem;
+  }
 }
