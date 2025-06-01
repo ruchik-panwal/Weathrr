@@ -1,8 +1,12 @@
 import extraInfoList from "./extraInfoList";
 import "/src/styles/display.css";
 import "/src/styles/extraInfoStyle.css";
+import "/src/styles/dailyForecast.css";
 
 const body = document.querySelector("body");
+const mainContent = document.createElement("div");
+mainContent.className = "mainContent";
+body.appendChild(mainContent);
 
 function mainDisplayDom() {
   // The Main Display which contains the most relevant Info
@@ -23,7 +27,8 @@ function mainDisplayDom() {
   // Adding a reset Button
   const resetBtn = document.createElement("button");
   resetBtn.className = "resetBtn";
-  resetBtn.textContent = "r";
+  resetBtn.classList.add("material-icons");
+  resetBtn.textContent = "refresh";
   imgBtnWrap.appendChild(resetBtn);
 
   // Wrapper For all the relevant Information
@@ -58,7 +63,7 @@ function mainDisplayDom() {
   // Appending
   mainDisplay.appendChild(imgBtnWrap);
   mainDisplay.appendChild(displayInfoWrap);
-  body.appendChild(mainDisplay);
+  mainContent.appendChild(mainDisplay);
 }
 
 function extraInfoDom() {
@@ -67,7 +72,7 @@ function extraInfoDom() {
   extraInfoWrap.className = "extraInfoWrap";
 
   // Making the elements for extea info div
-  extraInfoList().forEach(element => {
+  extraInfoList().forEach((element) => {
     // The Wrapper for Individual InfoElements
     const infoDiv = document.createElement("div");
     infoDiv.className = "info" + element.iconName;
@@ -77,13 +82,13 @@ function extraInfoDom() {
     infoIcon.className = "material-icons";
     infoIcon.textContent = element.iconName;
     infoDiv.appendChild(infoIcon);
-    
+
     // Ading Dom For the Value
     const infoValue = document.createElement("p");
     infoValue.className = "infoValue";
     infoValue.textContent = "34 mph"; //Temporary Value
     infoDiv.appendChild(infoValue);
-    
+
     // Adding title
     const infoTitle = document.createElement("p");
     infoTitle.className = "infoTitle";
@@ -93,7 +98,44 @@ function extraInfoDom() {
     extraInfoWrap.appendChild(infoDiv);
   });
 
-  body.appendChild(extraInfoWrap);
+  mainContent.appendChild(extraInfoWrap);
 }
 
-export { mainDisplayDom, extraInfoDom };
+function futureForecastDom() {
+  const forecastWrap = document.createElement("div");
+  forecastWrap.className = "forecastWrap";
+
+  for (let i = 0; i < 5; i++) {
+    const dayForecast = document.createElement("div");
+    dayForecast.className = "dayForecast";
+
+    const dayForecastIcon = document.createElement("div");
+    dayForecastIcon.className = "dayForecastIcon";
+    dayForecastIcon.classList.add("material-icons");
+    dayForecastIcon.textContent = "cloud";
+    dayForecast.appendChild(dayForecastIcon);
+
+    const dayForecastText = document.createElement("div");
+    dayForecastText.className = "dayForecastText";
+    dayForecast.appendChild(dayForecastText);
+    
+    [
+      "forecastDate",
+      "forecastHigh",
+      "forecastLow",
+      "forecastDes",
+    ].forEach((forecast) => {
+      const element = document.createElement("p");
+      element.className = forecast;
+      element.textContent = forecast;
+      dayForecastText.appendChild(element);
+    });
+
+    // Temporary data
+    forecastWrap.appendChild(dayForecast);
+  }
+
+  mainContent.appendChild(forecastWrap);
+}
+
+export { mainDisplayDom, extraInfoDom, futureForecastDom };
