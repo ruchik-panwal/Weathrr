@@ -1,9 +1,17 @@
 export default async function weatherApi(VC_URL, API_KEY, place, unit) {
-  const response = await fetch(
-    VC_URL + place + "?key=" + API_KEY + "&unitGroup=" + unit
-  );
-  const jResponse = await response.json();
+  try {
+    const response = await fetch(
+      VC_URL + place + "?key=" + API_KEY + "&unitGroup=" + unit
+    );
 
-  console.log(jResponse);
-  console.log(jResponse.currentConditions.temp);
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const jResponse = await response.json();
+    return jResponse;
+  } catch (error) {
+    console.error("Error fetching weather data:", error.message);
+    return null;
+  }
 }
