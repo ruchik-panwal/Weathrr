@@ -1,4 +1,4 @@
-import extraInfoList from "./extraInfoList";
+import { extraInfoList } from "./extraInfoList";
 import "/src/styles/display.css";
 import "/src/styles/extraInfoStyle.css";
 import "/src/styles/dailyForecast.css";
@@ -38,26 +38,24 @@ function mainDisplayDom() {
   // Displating The current Temperature
   const currentTemp = document.createElement("h1");
   currentTemp.className = "currentTemp";
-  currentTemp.textContent = "27";
+  currentTemp.classList.add("temp");
   displayInfoWrap.appendChild(currentTemp);
 
   // Giving the Description for the current Temperature
   const currentDes = document.createElement("p");
   currentDes.className = "currentDes";
-  currentDes.textContent = "Partially cloudy";
+  currentDes.classList.add("conditions");
   displayInfoWrap.appendChild(currentDes);
 
   // Giving the Description for the current Temperature
   const description = document.createElement("p");
   description.className = "description";
-  description.textContent =
-    "Similar temperatures continuing with a chance of rain multiple days.";
   displayInfoWrap.appendChild(description);
 
   // Adding place given by the User
   const disLocation = document.createElement("p");
   disLocation.className = "disLocation";
-  disLocation.textContent = "Mumbai";
+  disLocation.classList.add("resolvedAddress");
   displayInfoWrap.appendChild(disLocation);
 
   // Appending
@@ -85,8 +83,8 @@ function extraInfoDom() {
 
     // Ading Dom For the Value
     const infoValue = document.createElement("p");
-    infoValue.className = "infoValue";
-    infoValue.textContent = "34 mph"; //Temporary Value
+    infoValue.className = element.classname;
+    infoValue.textContent = "--"; //Temporary Value
     infoDiv.appendChild(infoValue);
 
     // Adding title
@@ -118,23 +116,21 @@ function futureForecastDom() {
     const dayForecastText = document.createElement("div");
     dayForecastText.className = "dayForecastText";
     dayForecast.appendChild(dayForecastText);
-    
-    [
-      "forecastDate",
-      "forecastHigh",
-      "forecastLow",
-      "forecastDes",
-    ].forEach((forecast) => {
-      const element = document.createElement("p");
-      element.className = forecast;
-      element.textContent = forecast;
-      dayForecastText.appendChild(element);
-    });
+
+    const arr = ["forecastDate", "forecastHigh", "forecastLow", "forecastDes"]; 
+    arr.forEach(
+      (forecast) => {
+        const element = document.createElement("p");
+        element.className = forecast;
+        element.id = "x" + (i+1) + (arr.indexOf(forecast)+1);
+        element.textContent = forecast;
+        dayForecastText.appendChild(element);
+      }
+    );
 
     // Temporary data
     forecastWrap.appendChild(dayForecast);
   }
-
   mainContent.appendChild(forecastWrap);
 }
 
