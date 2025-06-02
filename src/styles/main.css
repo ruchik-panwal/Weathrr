@@ -10,12 +10,18 @@ body {
   margin: 0;
   padding: 0;
   width: 100vw;
+  background: #309668;
+  background: radial-gradient(
+    circle,
+    rgba(48, 150, 104, 1) 0%,
+    rgba(47, 125, 102, 1) 19%,
+    rgba(32, 61, 54, 1) 47%,
+    rgba(0, 0, 0, 1) 100%
+  );
 }
 
 @media (min-width: 768px) {
   body {
-    height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -23,7 +29,6 @@ body {
 }
 
 .mainContent {
-  background-color: aqua;
   width: 100%;
 
   display: grid;
@@ -56,6 +61,8 @@ body {
   height: 100%;
 }
 
-.forecastWrap {
-  background-color: gold;
+.mainDisplay,
+.extraInfoWrap div,
+.dayForecast {
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 25px 50px -12px;
 }
