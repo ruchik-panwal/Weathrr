@@ -3,6 +3,8 @@ import "/src/styles/display.css";
 import "/src/styles/extraInfoStyle.css";
 import "/src/styles/dailyForecast.css";
 import "/src/styles/header.css";
+import "/src/styles/footer.css";
+
 
 const body = document.querySelector("body");
 
@@ -35,6 +37,19 @@ function header() {
   toggleUnit.className = "toggleUnit";
   toggleUnit.textContent = "C";
   head.appendChild(toggleUnit);
+}
+
+function footer(){
+  const foot = document.createElement("div");
+  foot.className = "foot";
+  
+  const github = document.createElement("a");
+  github.className = "github";
+  github.textContent = "Github";
+  github.src = "https://github.com/ruchik-panwal/Weathrr";
+
+  foot.appendChild(github);
+  body.appendChild(foot);
 }
 
 const mainContent = document.createElement("div");
@@ -166,4 +181,4 @@ function futureForecastDom() {
   body.appendChild(mainContent);
 }
 
-export { mainDisplayDom, extraInfoDom, futureForecastDom, header };
+export { mainDisplayDom, extraInfoDom, futureForecastDom, header, footer };
