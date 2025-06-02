@@ -11,6 +11,11 @@ function header() {
   head.className = "header";
   body.appendChild(head);
 
+  const logo = document.createElement("div");
+  logo.className = "logo";
+  logo.textContent = "Weathrr";
+  head.appendChild(logo);
+
   const searchForm = document.createElement("form");
   searchForm.className = "searchForm";
   head.appendChild(searchForm);
@@ -28,7 +33,7 @@ function header() {
 
   const toggleUnit = document.createElement("button");
   toggleUnit.className = "toggleUnit";
-  toggleUnit.textContent = "toggleUnit";
+  toggleUnit.textContent = "C";
   head.appendChild(toggleUnit);
 }
 
