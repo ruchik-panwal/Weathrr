@@ -3,6 +3,7 @@ import {
   extraInfoDom,
   futureForecastDom,
   header,
+  footer,
 } from "./modules/domCreator";
 
 import { searchPlace , toggleUnit} from "./modules/buttonControl";
@@ -18,3 +19,4 @@ mainDisplayDom();
 extraInfoDom();
 futureForecastDom();
 infoDisplay();
+footer();
