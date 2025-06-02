@@ -46,8 +46,8 @@ function footer() {
   github.className = "github";
   github.textContent = "Github";
   github.href = "https://github.com/ruchik-panwal/Weathrr";
-  linkDiv.target = "_blank";
-  linkDiv.rel = "noopener noreferrer";
+  github.target = "_blank";
+  github.rel = "noopener noreferrer";
 
   foot.appendChild(github);
   body.appendChild(foot);
