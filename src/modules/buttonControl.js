@@ -15,7 +15,13 @@ function searchPlace() {
 function toggleUnit() {
   const togBtn = document.querySelector(".toggleUnit");
   togBtn.addEventListener("click", () => {
-    getUnit() == "us" ? setUnit("uk") : setUnit("us");
+    if (getUnit() == "us") {
+      setUnit("uk");
+      togBtn.textContent = "C";
+    } else {
+      setUnit("us");
+      togBtn.textContent = "F";
+    }
     domUnitChanger();
     infoDisplay();
   });
