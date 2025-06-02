@@ -33,6 +33,7 @@ input {
 
 .searchbar {
   border-radius: 30px;
+  width: 500px;
   height: 100%;
   border: none;
   padding: 0 20px;
