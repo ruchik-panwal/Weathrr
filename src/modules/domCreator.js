@@ -5,7 +5,6 @@ import "/src/styles/dailyForecast.css";
 import "/src/styles/header.css";
 import "/src/styles/footer.css";
 
-
 const body = document.querySelector("body");
 
 function header() {
@@ -29,7 +28,7 @@ function header() {
 
   const searchBtn = document.createElement("button");
   searchBtn.className = "searchBtn";
-  searchBtn.classList.add("material-icons")
+  searchBtn.classList.add("material-icons");
   searchBtn.textContent = "search";
   searchForm.appendChild(searchBtn);
 
@@ -39,14 +38,16 @@ function header() {
   head.appendChild(toggleUnit);
 }
 
-function footer(){
+function footer() {
   const foot = document.createElement("div");
   foot.className = "foot";
-  
+
   const github = document.createElement("a");
   github.className = "github";
   github.textContent = "Github";
-  github.src = "https://github.com/ruchik-panwal/Weathrr";
+  github.href = "https://github.com/ruchik-panwal/Weathrr";
+  linkDiv.target = "_blank";
+  linkDiv.rel = "noopener noreferrer";
 
   foot.appendChild(github);
   body.appendChild(foot);
